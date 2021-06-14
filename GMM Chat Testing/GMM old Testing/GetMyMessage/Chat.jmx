@@ -1,0 +1,1134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">adarshtest1.getmymessage.co</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Host</stringProp>
+              <stringProp name="Header.value">adarshtest1.getmymessage.co</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Origin</stringProp>
+              <stringProp name="Header.value">https://adarshtest1.getmymessage.co</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+          <boolProp name="clearEachIteration">false</boolProp>
+          <boolProp name="useExpires">true</boolProp>
+        </CacheManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="WebLogin" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="mode" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">mode</stringProp>
+                <stringProp name="Argument.value">web</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="password" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">abcd1234</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="username" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">rosepv123+1@gmail.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">index/login</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="false">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://adarshtest1.getmymessage.co</stringProp>
+              </elementProp>
+              <elementProp name="X-Requested-With" elementType="Header">
+                <stringProp name="Header.name">X-Requested-With</stringProp>
+                <stringProp name="Header.value">XMLHttpRequest</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/x-www-form-urlencoded; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://adarshtest1.getmymessage.co/index</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="false">
+            <stringProp name="ConstantTimer.delay">0</stringProp>
+          </ConstantTimer>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SocketGet" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="t" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">t</stringProp>
+                <stringProp name="Argument.value">1528987561812-3</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="namespace" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">namespace</stringProp>
+                <stringProp name="Argument.value">gmm-adarshtest1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="EIO" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">EIO</stringProp>
+                <stringProp name="Argument.value">3</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="transport" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">transport</stringProp>
+                <stringProp name="Argument.value">polling</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="userid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">userid</stringProp>
+                <stringProp name="Argument.value">704</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="email" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">email</stringProp>
+                <stringProp name="Argument.value">rosepv123+1@gmail.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">adarshtest1.messageboxapp.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">socket.io/</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://adarshtest1.getmymessage.co</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://adarshtest1.getmymessage.co/home</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">text/plain;charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">adarshtest1.messageboxapp.com</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">sid</stringProp>
+            <stringProp name="RegexExtractor.regex">{&quot;sid&quot;:&quot;(.+?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default"></stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Socket Post" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">adarshtest1.messageboxapp.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">socket.io/?userid=704&amp;email=rosepv123%2B1%40gmail.com&amp;namespace=gmm-adarshtest1&amp;EIO=3&amp;transport=polling&amp;t=1528987561812-3&amp;sid=${sid}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://adarshtest1.getmymessage.co</stringProp>
+              </elementProp>
+              <elementProp name="Content-type" elementType="Header">
+                <stringProp name="Header.name">Content-type</stringProp>
+                <stringProp name="Header.value">text/plain;charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://adarshtest1.getmymessage.co/home</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">adarshtest1.messageboxapp.com</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+          <stringProp name="scriptLanguage">javascript</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">/*global module, require*/
+
+//var logger = require(&apos;./logger&apos;);
+
+module.exports = {
+
+  /**
+   * Before connection (just for faye)
+   * @param {client} client connection
+   */
+  beforeConnect : function (client) {
+    // Your logic
+    // By example
+    // client.setHeader(&apos;Authorization&apos;, &apos;OAuth abcd-1234&apos;);
+    // client.disable(&apos;websocket&apos;);
+  },
+
+  /**
+   * on socket io connect
+   * @param {client} client connection
+   * @param {done}   callback function(err) {}
+   */
+  onConnect : function (client, done) {
+      console.log(&quot;connected&quot;);
+    // Your logic
+    // client.subscribe(&apos;/test&apos;, function() {});
+    done();
+  },
+
+  /**
+   * send a message
+   * @param {client} client connection
+   * @param {done}   callback function(err) {}
+   */
+  sendMessage : function (client, done) {
+   var messageid = Math.floor(Math.random()*9000000) + 1000000+&apos;&apos;+Date.now();
+   // logger.error(&apos;Not implement method sendMessage in generator&apos;);
+    // Your logic
+     client.emit(&quot;userToUser&quot;, { 
+  &quot;companyid&quot;:339,
+&quot;chatid&quot;:&quot;0070300704&quot;,
+&quot;chatmediatype&quot;:&quot;Text&quot;,
+&quot;chattype&quot;:&quot;USER&quot;,
+&quot;message&quot;:&quot;aGk=&quot;,
+&quot;messageid&quot;:&quot;&quot;,
+&quot;targetuserid&quot;:&quot;703&quot;,
+&quot;usergroupid&quot;:&quot;3&quot;,
+&quot;userid&quot;:&quot;704&quot;,
+&quot;firstname&quot;:&quot;Dual&quot;,
+&quot;lastname&quot;:&quot;Rose&quot;,
+&quot;username&quot;:&quot;rosepv123+1@gmail.com&quot;
+}, function(callback) {
+                   if(callback){
+
+                       console.log(callback.result);
+                   }else{
+                   console.log(0);
+                   }
+               });
+    //client.emit(&apos;test&apos;, { hello: &apos;world&apos; });
+    done();
+  }
+};
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+          <stringProp name="scriptLanguage">javascript</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">var ioOptions ={
+	host:&quot;adarshtest1&quot;,
+hostname:&quot;adarshtest1&quot;,
+path:&quot;/socket.io&quot;,
+port:&quot;4900&quot;,
+query:{userid: &quot;704&quot;, email: &quot;rosepv123+1@gmail.com&quot;, namespace: &quot;gmm-adarshtest1&quot;},
+//reconnection limit:1000,
+secure:false
+}
+function hoi() {
+	io = &quot;https://adarshtest1.messageboxapp.com/socket.io/socket.io.js&quot;;
+	}
+hoi();
+portjs = &quot;https://adarshtest1.messageboxapp.com/socket.io/socket.io.js&quot;;
+socket = io.connect(portjs, ioOptions);
+//refreshOpenRequests();
+socket.on(&apos;connect&apos;, function(message) {
+    ////
+    console.info(&quot;__connected__&quot;);
+    swal({
+        title: gmmValAlerts[&quot;GMM_VAL_NW_CONNECTED_MSG&quot;],
+        text: &quot;&quot;,
+        type:&quot;success&quot;,
+        showConfirmButton: false,
+        allowEscapeKey: false
+    });
+    setTimeout(function() {
+        swal.close();
+        if(localStorage.getItem(&apos;browserAlertStatus&apos;) != &apos;true&apos;){
+            showBrowserAlerts();
+        }
+    }, 1000);
+
+    function showBrowserAlerts(){
+        if(!categories){
+            setTimeout(function(){
+                swal(gmmValAlerts[&apos;GMM_WARNING&apos;], &quot;There are no active Service Categories in your account. Please create at least one category in Settings to start creating requests.&quot;)
+            }, 3000);
+        }
+        if(!isChrome){
+            setTimeout(function(){
+                swal(gmmValAlerts[&apos;GMM_WARNING&apos;], gmmValAlerts[&quot;GMM_GOOGLE_CHROME_WARNING&quot;]);
+                localStorage.setItem(&apos;browserAlertStatus&apos;, &apos;true&apos;);
+            }, 4000);
+        }
+        var screenWidth = screen.width;
+        if(screenWidth&lt;=1440){
+            setTimeout(function(){
+                swal(gmmValAlerts[&apos;GMM_WARNING&apos;], gmmValAlerts[&quot;GMM_SMALL_SCREEN_WARNING&quot;]);
+                localStorage.setItem(&apos;browserAlertStatus&apos;, &apos;true&apos;);
+            }, 6000);
+        }
+    }
+
+    $(&apos;#network-status&apos;).html(&apos;&lt;div class=&quot;label&quot;&gt;&apos;+gmmValAlerts[&apos;GMM_NW_STATUS_MSG&apos;]+&apos;&amp;nbsp;&amp;nbsp;&apos;+gmmValAlerts[&apos;GMM_VAL_NW_CONNECTED_MSG&apos;]+&apos;&lt;/div&gt;&apos;).fadeOut(&apos;slow&apos;).fadeIn(&apos;slow&apos;);
+    $(&apos;.nano1&apos;).removeClass(&apos;ajax-loader-kingsadmin&apos;);
+    $(&apos;#load_contacts&apos;).removeClass(&apos;ajax-loader-kingsadmin&apos;);
+
+    try
+    {
+        //        refreshOpenRequests();
+        refreshContacts(0);
+        var openedWindow = JSON.parse(localStorage.getItem(&apos;openedMsg&apos;));
+        $.each(openedWindow, function(index, obj) {
+
+            var explode = obj.split(&quot;#&quot;);
+
+            if (explode[0] == &quot;CUSTOMER&quot;)
+            {
+                if( (explode[1])*1 ) {
+                    getOldChat(removeChr(index), 1, explode[1]);
+                    //console.log(&quot;Appending opened reference to widget table row.&quot;);
+                    addOpenedRefToOpenRow(removeChr(index), explode[1]);
+                }else{
+                    if(!$(index).is(&apos;:visible&apos;) &amp;&amp; ($(&apos;.initialRequestWindow&apos;).length == 0))
+                        getOldChat(removeChr(index), 1, explode[1]);
+                }
+            }
+            else
+            {
+                var newIndex = appendChr(parseInt(removeChr(index)) -1);
+
+                var internalChatId = removeChr(index);
+
+
+
+
+                var reqData = new Object();
+                reqData.chatId = internalChatId;
+                ajax_loader_disable();
+                $.ajax({
+                    type: &apos;POST&apos;,
+                    dataType: &quot;json&quot;,
+                    url: baseUrl + &quot;/home/getrequestdetailsbyinternalchatid&quot;,
+                    data: reqData,
+                    success: function(data) {
+                        if(data[0]){
+                            setTimeout(function(){
+                                $(&quot;#serviceregisterUpdateCHT&quot;+data[0][&apos;SR_ChatId&apos;]+&quot; .chtwitbut&quot;).click();
+                            }, 2000);
+                        }
+                    }
+                });
+            }
+
+        });
+        if(companySelectedPackageId == 1) {
+            if($.isEmptyObject(openedWindow)) {
+                if($(&apos;.customerChat&apos;).length == 0) {
+                    send_internalV3();
+                }
+            } else if (typeof(openedWindow.no) != &quot;undefined&quot;) { // Login condition
+                if($(&apos;.customerChat&apos;).length == 0) {
+                    send_internalV3();
+                }
+            }
+        }
+        else {
+            if($.isEmptyObject(openedWindow)) {
+                if($(&apos;.initialRequestWindow&apos;).length == 0) {
+                    send_internalV3();
+                }
+            } else if (typeof(openedWindow.no) != &quot;undefined&quot;) { // Login condition
+                if($(&apos;.initialRequestWindow&apos;).length == 0) {
+                    send_internalV3();
+                }
+            }
+        }
+
+    }
+    catch (e) {
+        //        console.log(e);
+    }
+
+});
+socket.on(&apos;disconnect&apos;, function(err) {
+    errorconnection();
+    socket.io.reconnect();
+});
+socket.on(&apos;reconnect&apos;, function(message) {
+
+});
+socket.on(&apos;reconnecting&apos;, function(message) {
+
+});
+socket.on(&apos;connecting&apos;, function(message) {
+
+    //$(&apos;#msg&apos;).html(&quot;&lt;p class=&apos;ui-state-error ui-corner-all socket-connecting&apos; &gt;Connecting...&lt;/p&gt;&quot;);
+    // $(&apos;#msg&apos;).html(&quot;&lt;div class=&apos;label label-warning&apos; &gt;&quot;+gmmValAlerts[&apos;GMM_VAL_CONNECTING_MSG&apos;]+&quot;...&lt;/div&gt;&quot;).fadeOut(&apos;slow&apos;).fadeIn(&apos;slow&apos;);
+    //$(&apos;#network-status&apos;).removeClass(&apos;btn-success&apos;);
+    //$(&apos;#network-status&apos;).addClass(&apos;btn-warning&apos;);
+    $(&apos;#network-status&apos;).html(gmmValAlerts[&apos;GMM_VAL_CONNECTING_MSG&apos;]+&apos;...&apos;);
+
+});
+// sample emit function
+socket.emit(&apos;clientLoginInternal&apos;,
+        {&quot;userid&quot;: &quot;704&quot;,
+            &quot;companyid&quot;: &quot;339&quot;,
+            &quot;username&quot;: &quot;rosepv123+1@gmail.com&quot;,
+            &quot;password&quot;: &quot;abcd1234&quot;,
+            &quot;usertype&quot;: &quot;Internal&quot;,
+            &quot;usergroupid&quot;: &quot;3&quot;, //TODO
+            &quot;usergroup&quot;: &quot;Agent&quot;,
+            &quot;firstname&quot;: &quot;Dual&quot;,
+            &quot;lastname&quot;: &quot;Rose&quot;,
+            &quot;propertycode&quot;: &quot;&quot;,
+            &quot;chatcategoryid&quot;: &quot;&quot;,
+            &quot;chatcategory&quot;: &apos;&apos;, //TODO
+            &quot;uniqueid&quot;: &quot;haqrqdrkkt7ab515876afbl157&quot;,
+            &quot;targetuniqueid&quot;: &quot;&quot;}); </stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="false">
+          <stringProp name="scriptLanguage">javascript</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">socketsecond.emit(&apos;initiateUserToUser&apos;,
+{&quot;userid&quot;: &quot;704&quot;,
+&apos;usergroupid&apos;: &quot;3&quot;,
+&apos;username&apos;: &quot;Dual&quot;,
+&quot;companyid&quot;: &quot;339&quot;,
+&apos;targetuserid&apos;: removeChr(destUserId),
+&apos;message&apos;: utf8ToEnc(chatInitiateMessage),
+&apos;chatid&apos;: uniqueChatId.toString(),
+&apos;chatmediatype&apos;: &quot;Text&quot;,
+&apos;chattype&apos;: &apos;USER&apos;
+},</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="false">
+          <stringProp name="scriptLanguage">javascript</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">client.emit(&quot;userToUser&quot;, { 
+  &quot;companyid&quot;:&quot;339&quot;,
+&quot;chatid&quot;:&quot;0070300704&quot;,
+&quot;chatmediatype&quot;:&quot;Text&quot;,
+&quot;chattype&quot;:&quot;USER&quot;,
+&quot;message&quot;:&quot;aGk=&quot;,
+&quot;messageid&quot;:&quot;19161201529482155380&quot;,
+&quot;targetuserid&quot;:&quot;703&quot;,
+&quot;usergroupid&quot;:&quot;3&quot;,
+&quot;userid&quot;:&quot;704&quot;,
+&quot;firstname&quot;:&quot;Dual&quot;,
+&quot;lastname&quot;:&quot;Rose&quot;,
+&quot;username&quot;:&quot;rosepv123+1@gmail.com&quot;
+}, function(callback) {
+                   if(callback){
+
+                       console.log(callback.result);
+                   }else{
+                   console.log(0);
+                   }
+               });</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="false">
+          <stringProp name="scriptLanguage">javascript</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">socketsecond.emit(&apos;userToUser&apos;,
+{&apos;userid&apos;: &quot;704&quot;,
+&quot;companyid&quot;: &quot;339&quot;,
+&apos;messageid&apos;: userToUserAutomatedMessageId,
+&apos;usergroupid&apos;: &quot;3&quot;,
+&apos;username&apos;: &quot;rosepv123+1@gmail.com&quot;,
+&apos;firstname&apos;: &quot;Dual&quot;,
+&apos;lastname&apos;: &quot;Rose&quot;,
+&apos;chatmediatype&apos;: &quot;Text&quot;,
+&apos;targetuserid&apos;: &quot;703&quot;,
+&apos;message&apos;: &quot;aGk=&quot;,
+&apos;chatid&apos;: &quot;0070300704&quot;,
+&apos;chattype&apos;: &quot;USER&quot;}, function(callback) {
+if(callback){
+
+if(callback.result == 1){
+var chatTime = getDateTime();
+sendMsgTo(chatDt[dest][&apos;chatid&apos;], {&apos;msg&apos;: message, &apos;time&apos;: chatTime[&apos;time12&apos;]},&apos;&apos;, &apos;&apos;, userToUserAutomatedMessageId );
+ga(&apos;send&apos;,&apos;event&apos;,&apos;Chat&apos;,&apos;One To One&apos;);
+}
+}
+});</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="false">
+          <stringProp name="scriptLanguage">javascript</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">
+  sendMessage : function (client, done) {
+   // logger.error(&apos;Not implement method sendMessage in generator&apos;);
+    // Your logic
+    client.emit(&apos;userToUser&apos;, { userid: &apos;836&apos;,
+ companyid: &apos;339&apos;,
+ messageid: &apos;51018361529563443667&apos;,
+ usergroupid: &apos;3&apos;,
+ username: &apos;rosepv123+1@gmail.com&apos;,
+ firstname: &apos;Dual&apos;,
+ lastname: &apos;Rose&apos;,
+ chatmediatype: &apos;Text&apos;,
+ targetuserid: &apos;703&apos;,
+ message: &apos;aGV5&apos;,
+ chatid: &apos;0070300704&apos;,
+ chattype: &apos;USER&apos;});
+    //client.publish(&apos;/test&apos;, { hello: &apos;world&apos; });
+    done();
+  }</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="Connect to socket" enabled="true">
+          <stringProp name="serverAddress">adarshtest1.messageboxapp.com</stringProp>
+          <stringProp name="serverPort">4900</stringProp>
+          <stringProp name="implementation">RFC6455 (v13)</stringProp>
+          <stringProp name="protocol">wss</stringProp>
+          <stringProp name="contextPath">socket.io/</stringProp>
+          <stringProp name="contentEncoding">UTF-8</stringProp>
+          <stringProp name="requestPayload">userid=704&amp;email=rosepv123%2B1%40gmail.com&amp;namespace=gmm-adarshtest1&amp;EIO=3&amp;transport=polling&amp;t=1530535030112-26&amp;sid=${sid}</stringProp>
+          <stringProp name="connectionTimeout">5000</stringProp>
+          <stringProp name="responseTimeout">20000</stringProp>
+          <boolProp name="ignoreSslErrors">true</boolProp>
+          <boolProp name="streamingConnection">true</boolProp>
+          <stringProp name="connectionId">${sid}</stringProp>
+          <stringProp name="responsePattern"></stringProp>
+          <stringProp name="closeConncectionPattern"></stringProp>
+          <stringProp name="proxyAddress"></stringProp>
+          <stringProp name="proxyPassword"></stringProp>
+          <stringProp name="proxyPort"></stringProp>
+          <stringProp name="proxyUsername"></stringProp>
+          <stringProp name="messageBacklog">3</stringProp>
+          <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="transport" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">polling</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">transport</stringProp>
+              </elementProp>
+              <elementProp name="t" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1528987561812-3</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">t</stringProp>
+              </elementProp>
+              <elementProp name="sid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${sid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">sid</stringProp>
+              </elementProp>
+              <elementProp name="namespace" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">gmm-adarshtest1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">namespace</stringProp>
+              </elementProp>
+              <elementProp name="t" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1530535030112-26</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">t</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">
+var ioOptions ={
+	host:&quot;adarshtest1&quot;,
+hostname:&quot;adarshtest1&quot;,
+path:&quot;/socket.io&quot;,
+port:&quot;4910&quot;,
+query:{userid: &quot;704&quot;, email: &quot;rosepv123+1@gmail.com&quot;, namespace: &quot;gmm-adarshtest1&quot;},
+reconnection limit:1000,
+secure:false
+}
+portjs = &quot;https://adarshtest1.messageboxapp.com/socket.io/socket.io.js&quot;;
+socket = io.connect(portjs, ioOptions);
+//refreshOpenRequests();
+socket.on(&apos;connect&apos;, function(message) {
+    ////
+    console.info(&quot;__connected__&quot;);
+    swal({
+        title: gmmValAlerts[&quot;GMM_VAL_NW_CONNECTED_MSG&quot;],
+        text: &quot;&quot;,
+        type:&quot;success&quot;,
+        showConfirmButton: false,
+        allowEscapeKey: false
+    });
+    setTimeout(function() {
+        swal.close();
+        if(localStorage.getItem(&apos;browserAlertStatus&apos;) != &apos;true&apos;){
+            showBrowserAlerts();
+        }
+    }, 1000);
+
+    function showBrowserAlerts(){
+        if(!categories){
+            setTimeout(function(){
+                swal(gmmValAlerts[&apos;GMM_WARNING&apos;], &quot;There are no active Service Categories in your account. Please create at least one category in Settings to start creating requests.&quot;)
+            }, 3000);
+        }
+        if(!isChrome){
+            setTimeout(function(){
+                swal(gmmValAlerts[&apos;GMM_WARNING&apos;], gmmValAlerts[&quot;GMM_GOOGLE_CHROME_WARNING&quot;]);
+                localStorage.setItem(&apos;browserAlertStatus&apos;, &apos;true&apos;);
+            }, 4000);
+        }
+        var screenWidth = screen.width;
+        if(screenWidth&lt;=1440){
+            setTimeout(function(){
+                swal(gmmValAlerts[&apos;GMM_WARNING&apos;], gmmValAlerts[&quot;GMM_SMALL_SCREEN_WARNING&quot;]);
+                localStorage.setItem(&apos;browserAlertStatus&apos;, &apos;true&apos;);
+            }, 6000);
+        }
+    }
+
+    $(&apos;#network-status&apos;).html(&apos;&lt;div class=&quot;label&quot;&gt;&apos;+gmmValAlerts[&apos;GMM_NW_STATUS_MSG&apos;]+&apos;&amp;nbsp;&amp;nbsp;&apos;+gmmValAlerts[&apos;GMM_VAL_NW_CONNECTED_MSG&apos;]+&apos;&lt;/div&gt;&apos;).fadeOut(&apos;slow&apos;).fadeIn(&apos;slow&apos;);
+    $(&apos;.nano1&apos;).removeClass(&apos;ajax-loader-kingsadmin&apos;);
+    $(&apos;#load_contacts&apos;).removeClass(&apos;ajax-loader-kingsadmin&apos;);
+
+    try
+    {
+        //        refreshOpenRequests();
+        refreshContacts(0);
+        var openedWindow = JSON.parse(localStorage.getItem(&apos;openedMsg&apos;));
+        $.each(openedWindow, function(index, obj) {
+
+            var explode = obj.split(&quot;#&quot;);
+
+            if (explode[0] == &quot;CUSTOMER&quot;)
+            {
+                if( (explode[1])*1 ) {
+                    getOldChat(removeChr(index), 1, explode[1]);
+                    //console.log(&quot;Appending opened reference to widget table row.&quot;);
+                    addOpenedRefToOpenRow(removeChr(index), explode[1]);
+                }else{
+                    if(!$(index).is(&apos;:visible&apos;) &amp;&amp; ($(&apos;.initialRequestWindow&apos;).length == 0))
+                        getOldChat(removeChr(index), 1, explode[1]);
+                }
+            }
+            else
+            {
+                var newIndex = appendChr(parseInt(removeChr(index)) -1);
+
+                var internalChatId = removeChr(index);
+
+
+
+
+                var reqData = new Object();
+                reqData.chatId = internalChatId;
+                ajax_loader_disable();
+                $.ajax({
+                    type: &apos;POST&apos;,
+                    dataType: &quot;json&quot;,
+                    url: baseUrl + &quot;/home/getrequestdetailsbyinternalchatid&quot;,
+                    data: reqData,
+                    success: function(data) {
+                        if(data[0]){
+                            setTimeout(function(){
+                                $(&quot;#serviceregisterUpdateCHT&quot;+data[0][&apos;SR_ChatId&apos;]+&quot; .chtwitbut&quot;).click();
+                            }, 2000);
+                        }
+                    }
+                });
+            }
+
+        });
+        if(companySelectedPackageId == 1) {
+            if($.isEmptyObject(openedWindow)) {
+                if($(&apos;.customerChat&apos;).length == 0) {
+                    send_internalV3();
+                }
+            } else if (typeof(openedWindow.no) != &quot;undefined&quot;) { // Login condition
+                if($(&apos;.customerChat&apos;).length == 0) {
+                    send_internalV3();
+                }
+            }
+        }
+        else {
+            if($.isEmptyObject(openedWindow)) {
+                if($(&apos;.initialRequestWindow&apos;).length == 0) {
+                    send_internalV3();
+                }
+            } else if (typeof(openedWindow.no) != &quot;undefined&quot;) { // Login condition
+                if($(&apos;.initialRequestWindow&apos;).length == 0) {
+                    send_internalV3();
+                }
+            }
+        }
+
+    }
+    catch (e) {
+        //        console.log(e);
+    }
+
+});
+socket.on(&apos;disconnect&apos;, function(err) {
+    errorconnection();
+    socket.io.reconnect();
+});
+socket.on(&apos;reconnect&apos;, function(message) {
+
+});
+socket.on(&apos;reconnecting&apos;, function(message) {
+
+});
+socket.on(&apos;connecting&apos;, function(message) {
+
+    //$(&apos;#msg&apos;).html(&quot;&lt;p class=&apos;ui-state-error ui-corner-all socket-connecting&apos; &gt;Connecting...&lt;/p&gt;&quot;);
+    // $(&apos;#msg&apos;).html(&quot;&lt;div class=&apos;label label-warning&apos; &gt;&quot;+gmmValAlerts[&apos;GMM_VAL_CONNECTING_MSG&apos;]+&quot;...&lt;/div&gt;&quot;).fadeOut(&apos;slow&apos;).fadeIn(&apos;slow&apos;);
+    //$(&apos;#network-status&apos;).removeClass(&apos;btn-success&apos;);
+    //$(&apos;#network-status&apos;).addClass(&apos;btn-warning&apos;);
+    $(&apos;#network-status&apos;).html(gmmValAlerts[&apos;GMM_VAL_CONNECTING_MSG&apos;]+&apos;...&apos;);
+
+});
+
+
+// sample emit function
+socket.emit(&apos;clientLoginInternal&apos;,
+        {&quot;userid&quot;: 704,
+           &quot;companyid&quot;: 339,
+           &quot;username&quot;: rosepv123+1@gmail.com,
+           &quot;password&quot;: &quot;abcd1234&quot;,
+           &quot;usertype&quot;: Internal,
+           &quot;usergroupid&quot;: 3, 
+           &quot;usergroup&quot;: Agent,
+           &quot;firstname&quot;: Dual ,
+           &quot;lastname&quot;: Rose,
+           &quot;propertycode&quot;: &quot;&quot;,
+           &quot;chatcategoryid&quot;: &apos;&apos;,
+           &quot;chatcategory&quot;: &apos;&apos;, 
+           &quot;uniqueid&quot;: s20m9egdv699eii99bveltut35,
+           &quot;targetuniqueid&quot;: &quot;&quot;});</stringProp>
+            <stringProp name="scriptLanguage">javascript</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+        </hashTree>
+        <JMeter.plugins.functional.samplers.websocket.WebSocketSampler guiclass="JMeter.plugins.functional.samplers.websocket.WebSocketSamplerGui" testclass="JMeter.plugins.functional.samplers.websocket.WebSocketSampler" testname="Joining" enabled="true">
+          <stringProp name="serverAddress">adarshtest1.messageboxapp.com</stringProp>
+          <stringProp name="serverPort">4910</stringProp>
+          <stringProp name="implementation">RFC6455 (v13)</stringProp>
+          <stringProp name="protocol">wss</stringProp>
+          <stringProp name="contextPath">socket.io/</stringProp>
+          <stringProp name="contentEncoding">UTF-8</stringProp>
+          <stringProp name="requestPayload">42[“add user”,”rosepv123+1@gmail.com”]</stringProp>
+          <stringProp name="connectionTimeout">5000</stringProp>
+          <stringProp name="responseTimeout">20000</stringProp>
+          <boolProp name="ignoreSslErrors">false</boolProp>
+          <boolProp name="streamingConnection">false</boolProp>
+          <stringProp name="connectionId"></stringProp>
+          <stringProp name="responsePattern"></stringProp>
+          <stringProp name="closeConncectionPattern"></stringProp>
+          <stringProp name="proxyAddress"></stringProp>
+          <stringProp name="proxyPassword"></stringProp>
+          <stringProp name="proxyPort"></stringProp>
+          <stringProp name="proxyUsername"></stringProp>
+          <stringProp name="messageBacklog">3</stringProp>
+          <elementProp name="queryStringParameters" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="transport" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">polling</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">transport</stringProp>
+              </elementProp>
+              <elementProp name="t" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1528987561812-3</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">t</stringProp>
+              </elementProp>
+              <elementProp name="sid" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${sid}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">sid</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </JMeter.plugins.functional.samplers.websocket.WebSocketSampler>
+        <hashTree>
+          <JSR223Listener guiclass="TestBeanGUI" testclass="JSR223Listener" testname="JSR223 Listener" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">
+var ioOptions ={
+	host:&quot;adarshtest1&quot;,
+hostname:&quot;adarshtest1&quot;,
+path:&quot;/socket.io&quot;,
+port:&quot;4910&quot;,
+query:{userid: &quot;704&quot;, email: &quot;rosepv123+1@gmail.com&quot;, namespace: &quot;gmm-adarshtest1&quot;},
+reconnection limit:1000,
+secure:false
+}
+portjs = &quot;https://adarshtest1.messageboxapp.com/socket.io/socket.io.js&quot;;
+socket = io.connect(portjs, ioOptions);
+//refreshOpenRequests();
+socket.on(&apos;connect&apos;, function(message) {
+    ////
+    console.info(&quot;__connected__&quot;);
+    swal({
+        title: gmmValAlerts[&quot;GMM_VAL_NW_CONNECTED_MSG&quot;],
+        text: &quot;&quot;,
+        type:&quot;success&quot;,
+        showConfirmButton: false,
+        allowEscapeKey: false
+    });
+    setTimeout(function() {
+        swal.close();
+        if(localStorage.getItem(&apos;browserAlertStatus&apos;) != &apos;true&apos;){
+            showBrowserAlerts();
+        }
+    }, 1000);
+
+    function showBrowserAlerts(){
+        if(!categories){
+            setTimeout(function(){
+                swal(gmmValAlerts[&apos;GMM_WARNING&apos;], &quot;There are no active Service Categories in your account. Please create at least one category in Settings to start creating requests.&quot;)
+            }, 3000);
+        }
+        if(!isChrome){
+            setTimeout(function(){
+                swal(gmmValAlerts[&apos;GMM_WARNING&apos;], gmmValAlerts[&quot;GMM_GOOGLE_CHROME_WARNING&quot;]);
+                localStorage.setItem(&apos;browserAlertStatus&apos;, &apos;true&apos;);
+            }, 4000);
+        }
+        var screenWidth = screen.width;
+        if(screenWidth&lt;=1440){
+            setTimeout(function(){
+                swal(gmmValAlerts[&apos;GMM_WARNING&apos;], gmmValAlerts[&quot;GMM_SMALL_SCREEN_WARNING&quot;]);
+                localStorage.setItem(&apos;browserAlertStatus&apos;, &apos;true&apos;);
+            }, 6000);
+        }
+    }
+
+    $(&apos;#network-status&apos;).html(&apos;&lt;div class=&quot;label&quot;&gt;&apos;+gmmValAlerts[&apos;GMM_NW_STATUS_MSG&apos;]+&apos;&amp;nbsp;&amp;nbsp;&apos;+gmmValAlerts[&apos;GMM_VAL_NW_CONNECTED_MSG&apos;]+&apos;&lt;/div&gt;&apos;).fadeOut(&apos;slow&apos;).fadeIn(&apos;slow&apos;);
+    $(&apos;.nano1&apos;).removeClass(&apos;ajax-loader-kingsadmin&apos;);
+    $(&apos;#load_contacts&apos;).removeClass(&apos;ajax-loader-kingsadmin&apos;);
+
+    try
+    {
+        //        refreshOpenRequests();
+        refreshContacts(0);
+        var openedWindow = JSON.parse(localStorage.getItem(&apos;openedMsg&apos;));
+        $.each(openedWindow, function(index, obj) {
+
+            var explode = obj.split(&quot;#&quot;);
+
+            if (explode[0] == &quot;CUSTOMER&quot;)
+            {
+                if( (explode[1])*1 ) {
+                    getOldChat(removeChr(index), 1, explode[1]);
+                    //console.log(&quot;Appending opened reference to widget table row.&quot;);
+                    addOpenedRefToOpenRow(removeChr(index), explode[1]);
+                }else{
+                    if(!$(index).is(&apos;:visible&apos;) &amp;&amp; ($(&apos;.initialRequestWindow&apos;).length == 0))
+                        getOldChat(removeChr(index), 1, explode[1]);
+                }
+            }
+            else
+            {
+                var newIndex = appendChr(parseInt(removeChr(index)) -1);
+
+                var internalChatId = removeChr(index);
+
+
+
+
+                var reqData = new Object();
+                reqData.chatId = internalChatId;
+                ajax_loader_disable();
+                $.ajax({
+                    type: &apos;POST&apos;,
+                    dataType: &quot;json&quot;,
+                    url: baseUrl + &quot;/home/getrequestdetailsbyinternalchatid&quot;,
+                    data: reqData,
+                    success: function(data) {
+                        if(data[0]){
+                            setTimeout(function(){
+                                $(&quot;#serviceregisterUpdateCHT&quot;+data[0][&apos;SR_ChatId&apos;]+&quot; .chtwitbut&quot;).click();
+                            }, 2000);
+                        }
+                    }
+                });
+            }
+
+        });
+        if(companySelectedPackageId == 1) {
+            if($.isEmptyObject(openedWindow)) {
+                if($(&apos;.customerChat&apos;).length == 0) {
+                    send_internalV3();
+                }
+            } else if (typeof(openedWindow.no) != &quot;undefined&quot;) { // Login condition
+                if($(&apos;.customerChat&apos;).length == 0) {
+                    send_internalV3();
+                }
+            }
+        }
+        else {
+            if($.isEmptyObject(openedWindow)) {
+                if($(&apos;.initialRequestWindow&apos;).length == 0) {
+                    send_internalV3();
+                }
+            } else if (typeof(openedWindow.no) != &quot;undefined&quot;) { // Login condition
+                if($(&apos;.initialRequestWindow&apos;).length == 0) {
+                    send_internalV3();
+                }
+            }
+        }
+
+    }
+    catch (e) {
+        //        console.log(e);
+    }
+
+});
+socket.on(&apos;disconnect&apos;, function(err) {
+    errorconnection();
+    socket.io.reconnect();
+});
+socket.on(&apos;reconnect&apos;, function(message) {
+
+});
+socket.on(&apos;reconnecting&apos;, function(message) {
+
+});
+socket.on(&apos;connecting&apos;, function(message) {
+
+    //$(&apos;#msg&apos;).html(&quot;&lt;p class=&apos;ui-state-error ui-corner-all socket-connecting&apos; &gt;Connecting...&lt;/p&gt;&quot;);
+    // $(&apos;#msg&apos;).html(&quot;&lt;div class=&apos;label label-warning&apos; &gt;&quot;+gmmValAlerts[&apos;GMM_VAL_CONNECTING_MSG&apos;]+&quot;...&lt;/div&gt;&quot;).fadeOut(&apos;slow&apos;).fadeIn(&apos;slow&apos;);
+    //$(&apos;#network-status&apos;).removeClass(&apos;btn-success&apos;);
+    //$(&apos;#network-status&apos;).addClass(&apos;btn-warning&apos;);
+    $(&apos;#network-status&apos;).html(gmmValAlerts[&apos;GMM_VAL_CONNECTING_MSG&apos;]+&apos;...&apos;);
+
+});
+
+
+// sample emit function
+socket.emit(&apos;clientLoginInternal&apos;,
+        {&quot;userid&quot;: userId,
+            &quot;companyid&quot;: lCompanyId,
+            &quot;username&quot;: userName,
+            &quot;password&quot;: &quot;&quot;,
+            &quot;usertype&quot;: userType,
+            &quot;usergroupid&quot;: usergroupid, //TODO
+            &quot;usergroup&quot;: userGroup,
+            &quot;firstname&quot;: firstName,
+            &quot;lastname&quot;: lastName,
+            &quot;propertycode&quot;: &quot;&quot;,
+            &quot;chatcategoryid&quot;: chatCategoryId,
+            &quot;chatcategory&quot;: &apos;&apos;, //TODO
+            &quot;uniqueid&quot;: uniqueId,
+            &quot;targetuniqueid&quot;: &quot;&quot;}); </stringProp>
+            <stringProp name="scriptLanguage">javascript</stringProp>
+          </JSR223Listener>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>false</message>
+              <threadName>true</threadName>
+              <dataType>false</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>false</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

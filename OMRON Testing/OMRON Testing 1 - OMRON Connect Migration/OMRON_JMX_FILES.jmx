@@ -1,0 +1,2909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.3 r1808647">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="SignUp_OMRON" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="RandomDelay" elementType="Argument">
+            <stringProp name="Argument.name">RandomDelay</stringProp>
+            <stringProp name="Argument.value">2000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OffsetDelay" elementType="Argument">
+            <stringProp name="Argument.name">OffsetDelay</stringProp>
+            <stringProp name="Argument.value">300</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SignUp_OMRON" enabled="false">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">30</stringProp>
+        <longProp name="ThreadGroup.start_time">1370726934000</longProp>
+        <longProp name="ThreadGroup.end_time">1370726934000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+          <stringProp name="CounterConfig.start">1</stringProp>
+          <stringProp name="CounterConfig.end"></stringProp>
+          <stringProp name="CounterConfig.incr">1</stringProp>
+          <stringProp name="CounterConfig.name">z</stringProp>
+          <stringProp name="CounterConfig.format"></stringProp>
+          <boolProp name="CounterConfig.per_user">false</boolProp>
+        </CounterConfig>
+        <hashTree/>
+        <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller" enabled="true"/>
+        <hashTree/>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="SignUp_OMRON" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="SignUp_OMRON" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;emailAddress&quot;: &quot;suryamohan${z}@yopmail.com&quot;,&#xd;
+     &quot;password&quot;: &quot;Qwe12345&quot;,&#xd;
+	&quot;name&quot;: &quot;Dev US&quot;,&#xd;
+	&quot;country&quot;: &quot;US&quot;,&#xd;
+	&quot;userTimeZone&quot;: &quot;19800&quot;,&#xd;
+	&quot;app&quot;: &quot;OCM&quot;,&#xd;
+	&quot;policy&quot;:[{&#xd;
+		&quot;v1&quot;: 1&#xd;
+	}],&#xd;
+	&quot;locale&quot;: &quot;en&quot;,&#xd;
+	&quot;phoneLcale&quot;: &quot;en&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/signup</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">f95c1c26-fbdb-4f3e-b32f-f869e49daf19</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>false</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>false</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>true</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Login_OMRON" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1598629230000</longProp>
+        <longProp name="ThreadGroup.end_time">1598629230000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Login_OMRON" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login_OMRON" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;emailAddress&quot;: &quot;sreeyanair1993@gmail.com&quot;,&#xd;
+     &quot;password&quot;: &quot;Qwe12345&quot;,&#xd;
+    &quot;country&quot;: &quot;US&quot;,&#xd;
+    &quot;app&quot;: &quot;OCM&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/login</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">b6ef4bc8-4403-4f65-9dc6-3afff8d21ed3</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="accessToken" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">accessToken</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">accessToken</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NotFound</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="refreshtoken" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">refreshToken</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">refreshToken</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NotFound</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="idToken" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">idToken</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">idToken</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NotFound</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="oldToken" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">oldToken</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">oldToken</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NotFound</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="accesstoken" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">accesstoken</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;accessToken&quot;:&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">Not_Found</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="refreshtoken" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">refreshtoken</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;refreshToken&quot;:&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">NOT_FOUND</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="idToken" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">idToken</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;idToken&quot;:&quot;(.+?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">null</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="oldToken" enabled="false">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">oldToken</stringProp>
+              <stringProp name="RegexExtractor.regex">&quot;oldToken&quot;:&quot;(.+?)&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">null</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Sync_BP" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sync_BP" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;measurements&quot;:[{&#xd;
+        &quot;measurementDate&quot;:1584343714000,&#xd;
+        &quot;systolic&quot;:&quot;116&quot;,&#xd;
+        &quot;diastolic&quot;:&quot;74&quot;,&#xd;
+        &quot;pulse&quot;:&quot;84&quot;,&#xd;
+        &quot;transferDate&quot;:1547061162000,&#xd;
+        &quot;timeZone&quot;:&quot;-21600&quot;,&#xd;
+        &quot;irregularHB&quot;:0,&#xd;
+        &quot;movementError&quot;:0,&#xd;
+        &quot;deviceModel&quot;:&quot;HEM-6401T-Z&quot;,&#xd;
+        &quot;userNumberInDevice&quot;:1,&#xd;
+        &quot;deviceLocalName&quot;:&quot;BLEsmart_0000011FEC21E5FA4752&quot;,&#xd;
+        &quot;deviceSerialID&quot;:&quot;0000011FEC21E5FA4752&quot;,&#xd;
+        &quot;isManualEntry&quot;:1,&#xd;
+        &quot;deleteFlag&quot;:0,&#xd;
+        &quot;notes&quot;:&quot;test&quot;,&#xd;
+        &quot;timeZoneDevice&quot;:&quot;-21600&quot;,&#xd;
+        &quot;countArtifactDetection&quot;:&quot;0&quot;,&#xd;
+        &quot;countIrregularHB&quot;:&quot;0&quot;,&#xd;
+        &quot;heartZoneIndicator&quot;:&quot;0&quot;,&#xd;
+        &quot;errNumber&quot;:&quot;0&quot;,&#xd;
+        &quot;deviceType&quot;:&quot;ios&quot;,&#xd;
+        &quot;positioningIndicator&quot;:1,&#xd;
+        &quot;cuffFlag&quot;:1,&#xd;
+        &quot;consecutiveMeasurement&quot;:true,&#xd;
+        &quot;irregularPulseDetection&quot;:1,&#xd;
+        &quot;movementDetect&quot;: 1,&#xd;
+        &quot;cuffWrapDetect&quot;:1,&#xd;
+        &quot;internalDeviceTemp&quot;:&quot;90&quot;,&#xd;
+        &quot;measurementStartingMethod&quot;:1,&#xd;
+        &quot;dateEnabled&quot;: 1,&#xd;
+        &quot;atrialFibrillationDetection&quot;:1,&#xd;
+        &quot;sequenceNo&quot;:&quot;123456&quot;,&#xd;
+        &quot;latitude&quot;: &quot;12.3&quot;,&#xd;
+        &quot;longitude&quot;: &quot;8.9&quot;,&#xd;
+        &quot;zipCode&quot;: &quot;682030&quot;,&#xd;
+        &quot;mets&quot;: 2,&#xd;
+        &quot;meanArterialPressure&quot;: 1,&#xd;
+        &quot;measurementLocalDate&quot;: 1547061162000&#xd;
+    }],&#xd;
+    &quot;app&quot;: &quot;OCM&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/sync/bp</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">24458367-327a-4bf3-bfc7-15bff73a271a</stringProp>
+                </elementProp>
+                <elementProp name="Checksum" elementType="Header">
+                  <stringProp name="Header.name">Checksum</stringProp>
+                  <stringProp name="Header.value">37bcbe076695b7571d378e712799fe3e565534fa90a2b9b4f5b12ae2bef48b3c</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Sync_Activity" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sync_Activity" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{	&quot;app&quot;: &quot;OCM&quot;,&#xd;
+   &quot;measurements&quot;:[&#xd;
+      {&#xd;
+         &quot;measurementDateFrom&quot;:1550687400000,&#xd;
+         &quot;aerobicSteps&quot;: {&#xd;
+      &quot;decideflag&quot;: 0,&#xd;
+      &quot;deleteflag&quot;: 0,&#xd;
+      &quot;deviceModel&quot;: &quot;HJ-327T&quot;,&#xd;
+      &quot;hourly&quot;: [&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550687400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550691000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550694600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550698200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550701800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550705400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550709000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550712600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550716200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550719800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550723400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550727000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550730600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550734200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550737800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550741400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550745000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550748600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550752200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550755800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550759400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550763000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550766600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550770200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;sequenceNumber&quot;: &quot;116&quot;,&#xd;
+      &quot;startTime&quot;: 1550687400000,&#xd;
+      &quot;total&quot;: 0&#xd;
+    },&#xd;
+    &quot;caloriesBurned&quot;: {&#xd;
+      &quot;decideflag&quot;: 0,&#xd;
+      &quot;deleteflag&quot;: 0,&#xd;
+      &quot;deviceModel&quot;: &quot;BP6001&quot;,&#xd;
+      &quot;hourly&quot;: [&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550687400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550691000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550694600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550698200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550701800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550705400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550709000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550712600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550716200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550719800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550723400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550727000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550730600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550734200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550737800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550741400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550745000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550748600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550752200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550755800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550759400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550763000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550766600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550770200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;sequenceNumber&quot;: &quot;116&quot;,&#xd;
+      &quot;startTime&quot;: 1550687400000,&#xd;
+      &quot;total&quot;: 0&#xd;
+    },&#xd;
+    &quot;deleteFlag&quot;: 0,&#xd;
+    &quot;deviceLocalName&quot;: &quot;blesmart_0000014aec21e551bd58&quot;,&#xd;
+    &quot;deviceModel&quot;: &quot;HJ-327T&quot;,&#xd;
+    &quot;deviceSerialID&quot;: &quot;00000094014a1201175b0b00a483&quot;,&#xd;
+    &quot;deviceType&quot;: &quot;android&quot;,&#xd;
+    &quot;distance&quot;: {&#xd;
+      &quot;decideflag&quot;: 0,&#xd;
+      &quot;deleteflag&quot;: 0,&#xd;
+      &quot;deviceModel&quot;: &quot;BP6001&quot;,&#xd;
+      &quot;hourly&quot;: [&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550687400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550691000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550694600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550698200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550701800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550705400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550709000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550712600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550716200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550719800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550723400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550727000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550730600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550734200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550737800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550741400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550745000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550748600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550752200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550755800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550759400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550763000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550766600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550770200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;sequenceNumber&quot;: &quot;116&quot;,&#xd;
+      &quot;startTime&quot;: 1550687400000,&#xd;
+      &quot;total&quot;: 0&#xd;
+    },&#xd;
+    &quot;measurementDateTo&quot;: 1550773799000,&#xd;
+    &quot;sequenceNumber&quot;: &quot;116&quot;,&#xd;
+    &quot;steps&quot;: {&#xd;
+      &quot;decideflag&quot;: 0,&#xd;
+      &quot;deleteflag&quot;: 0,&#xd;
+      &quot;deviceModel&quot;: &quot;BP6001&quot;,&#xd;
+      &quot;hourly&quot;: [&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550687400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550691000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550694600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550698200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550701800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550705400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550709000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550712600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550716200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550719800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550723400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550727000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550730600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550734200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550737800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550741400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550745000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550748600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550752200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550755800000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550759400000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550763000000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550766600000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        },&#xd;
+        {&#xd;
+          &quot;dividedData&quot;: [&#xd;
+            [&#xd;
+              0,&#xd;
+              60,&#xd;
+              0&#xd;
+            ]&#xd;
+          ],&#xd;
+          &quot;periodLength&quot;: 60,&#xd;
+          &quot;startTime&quot;: 1550770200000,&#xd;
+          &quot;value&quot;: 0&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;sequenceNumber&quot;: &quot;116&quot;,&#xd;
+      &quot;startTime&quot;: 1550687400000,&#xd;
+      &quot;total&quot;: 0&#xd;
+    },&#xd;
+    &quot;targetSteps&quot;: &quot;0&quot;,&#xd;
+    &quot;targetStepsAchievement&quot;: &quot;0.0&quot;,&#xd;
+    &quot;timeZone&quot;: &quot;19800&quot;,&#xd;
+    &quot;timeZoneDevice&quot;: &quot;19800&quot;,&#xd;
+    &quot;transferDate&quot;: 1550752508076,&#xd;
+    &quot;userNumberInDevice&quot;: 0&#xd;
+      }&#xd;
+   ]&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/sync/activity</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">fb0e0fe7-4361-4236-a44d-41954d6f0c42</stringProp>
+                </elementProp>
+                <elementProp name="Checksum" elementType="Header">
+                  <stringProp name="Header.name">Checksum</stringProp>
+                  <stringProp name="Header.value">45505c6a4184918cbcb78ac48b99fe8fd0f43596486b3e47a49d97d4bc8bbdd7</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Sync_Weight" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sync_Weight" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;app&quot;:&quot;OCM&quot;,&#xd;
+	&quot;measurements&quot;: [{&#xd;
+		&quot;measurementDate&quot;: &quot;1541118600000&quot;,&#xd;
+		&quot;type&quot;:&quot;weight&quot;,&#xd;
+		&quot;timeZone&quot;: &quot;19800&quot;,&#xd;
+		&quot;weight&quot;:80,&#xd;
+		&quot;bmiValue&quot;: 24,&#xd;
+		&quot;deviceType&quot;:&quot;ios&quot;,&#xd;
+		&quot;latitude&quot;: &quot;22322&quot;,&#xd;
+    	&quot;longitude&quot;: &quot;123333&quot;,&#xd;
+    	&quot;zipCode&quot;: &quot;682025&quot;&#xd;
+	}]&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/sync/weight</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">cf000729-7692-4f76-86aa-867745738731</stringProp>
+                </elementProp>
+                <elementProp name="Checksum" elementType="Header">
+                  <stringProp name="Header.name">Checksum</stringProp>
+                  <stringProp name="Header.value">9440a86818290d4b5423e4db105deb7eef80001291a0ce21fb17697ee48d1b1a</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Get_User_Profile" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get_User_Profile" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="app" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">app</stringProp>
+                  <stringProp name="Argument.value">OCM</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/user</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">22fa7fa2-ec65-485c-b769-fa4299c9e4a0</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Generate_Premium_Report" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate_Premium_Report" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;fromDate&quot;: &quot;1561995000000&quot;,&#xd;
+    &quot;toDate&quot;: 1563550200000,&#xd;
+    &quot;sendTo&quot;: &quot;sreejithkurup4@gmail.com&quot;,&#xd;
+    &quot;sendMail&quot;: 1,&#xd;
+    &quot;notes&quot;: &quot;Hello My Readings for today.&quot;,&#xd;
+    &quot;app&quot;: &quot;OCM&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/premium-report/generate</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">57b676bc-48f1-40e1-988a-83f8f3c612da</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Post_User_Profile" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Post_User_Profile" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;personalPref&quot;: {&#xd;
+        &quot;alcohol&quot;: 0,&#xd;
+        &quot;smoke&quot;: 1,&#xd;
+        &quot;caffeine&quot;: 1,&#xd;
+        &quot;medicine&quot;: 1&#xd;
+     },&#xd;
+     &quot;name&quot;: &quot;test user&quot;,&#xd;
+     &quot;country&quot;: &quot;US&quot;,&#xd;
+     &quot;medicalConditions&quot;:{&#xd;
+		&quot;hdl&quot;:500,&#xd;
+		&quot;valveDisease&quot;:0,&#xd;
+		&quot;significantPalpitations&quot;:0,&#xd;
+		&quot;myocardialInfarction&quot;:0,&#xd;
+		&quot;murmur&quot;:0,&#xd;
+		&quot;longQtSyndrome&quot;:0,&#xd;
+		&quot;diabetesMellitus&quot;:0,&#xd;
+		&quot;coronaryHeartDisease&quot;:0,&#xd;
+		&quot;atrialFibrillation&quot;:0,&#xd;
+		&quot;totalCholesterol&quot;:100,&#xd;
+		&quot;otherCardiacDescription&quot;:&quot;Some other cardiac disease&quot;,&#xd;
+		&quot;otherArrhythmiaDescription&quot;:&quot;An additional arrhythmia&quot;,&#xd;
+		&quot;cholesterol&quot;:0,&#xd;
+		&quot;cardiomyopathy&quot;:0,&#xd;
+		&quot;bloodPressureSys&quot;:110,&#xd;
+		&quot;bloodPressureDia&quot;:80,&#xd;
+		&quot;heartFailure&quot;:0,&#xd;
+		&quot;angina&quot;:0&#xd;
+	},&#xd;
+      &quot;stride&quot;: 5,&#xd;
+      &quot;strideAuto&quot;: 1,&#xd;
+      &quot;goal&quot;: {&#xd;
+          &quot;systolic&quot;: 80,&#xd;
+          &quot;diastolic&quot;: 110,&#xd;
+          &quot;steps&quot;: 1000,&#xd;
+          &quot;sleep&quot;: 8,&#xd;
+          &quot;weight&quot;: 60&#xd;
+     },&#xd;
+     &quot;appSettings&quot;: {&#xd;
+          &quot;notification&quot;: 1,&#xd;
+          &quot;tracking&quot;: {&#xd;
+              &quot;bp&quot;: 1,&#xd;
+              &quot;activity&quot;: 1,&#xd;
+              &quot;sleep&quot;: 1,&#xd;
+              &quot;weight&quot;: 1&#xd;
+          }&#xd;
+     },&#xd;
+     &quot;dateOfBirth&quot;: &quot;19870228&quot;,&#xd;
+     &quot;questionare&quot;: {&#xd;
+     	&quot;ethnicity&quot;: &quot;White/Caucasian&quot;,&#xd;
+	    &quot;familyStatus&quot;: &quot;Married&quot;,&#xd;
+	    &quot;jobDescription&quot;: &quot;I have a very active job, I have to walk a lot and often&quot;,&#xd;
+	    &quot;education&quot;: &quot;University graduate&quot;,&#xd;
+	    &quot;cvdDisease&quot;: [&quot;No&quot;],&#xd;
+	    &quot;recommendedBloodPressure&quot;: &quot;120/80&quot;,&#xd;
+	    &quot;geneticCvd&quot;: &quot;Parents&quot;,&#xd;
+	    &quot;chronicDisease&quot;: [&quot;No&quot;],&#xd;
+	    &quot;otherHealthComplaints&quot;:[&quot;None&quot;],&#xd;
+	    &quot;others&quot;: [&quot;None&quot;],&#xd;
+	    &quot;othersNonMandatory&quot;: [&quot;others&quot;]&#xd;
+     },&#xd;
+     &quot;policy&quot;: [&#xd;
+        {&#xd;
+            &quot;v1&quot;: 1&#xd;
+        }&#xd;
+    ],&#xd;
+     &quot;app&quot;: &quot;OCM&quot;&#xd;
+}&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/user</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">fdb2be8e-e6f0-439c-94ec-7f17a2e13eb5</stringProp>
+                </elementProp>
+                <elementProp name="Checksum" elementType="Header">
+                  <stringProp name="Header.name">Checksum</stringProp>
+                  <stringProp name="Header.value">d8c1be51cca952e3af79f862ff386f7a2332b8e6425541952958ba27be775a22</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Get_Consolidated_API_init-user" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get_Consolidated_API_init-user" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="app" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">app</stringProp>
+                  <stringProp name="Argument.value">OCM</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/init-user</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">33bc2578-6f19-473e-8a36-271d7fce1e35</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Generate_Report_share-reading" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Generate_Report_share-reading" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;fromDate&quot;: 1550687400000, &#xd;
+	&quot;toDate&quot;: 1550697400000,&#xd;
+	&quot;type&quot;: [&quot;BP&quot;, &quot;Activity&quot;],&#xd;
+	&quot;fileType&quot;: &quot;xls&quot;,&#xd;
+	&quot;notes&quot;: &quot;Sample notes&quot;,&#xd;
+	&quot;sendTo&quot;: &quot;prabhal@qburst.com&quot;,&#xd;
+	&quot;timeZone&quot;: &quot;19800&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/share-reading</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">67962795-1f7e-460c-9522-c973a1913bbe</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Refresh_Token_Login" enabled="false">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Refresh_Token_Login" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+	&quot;refreshToken&quot;: &quot;eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.B8jz9iXfZqVVBhyBaKA8cgLBxcledMstMfwZBwqgYDDOdbV8flkKnEPjECXx_HmQH627LfzX9qUROQXWek3LtE7qMeqYh5PdNoa_aZZsyOrXHqYisysykpHjhiiNUPDzmD-R8AGjoUI2Hc1NYVt6L8_bvLAzp2dPgnuksEu_zQ-Xoz2YD7yFut2g1aZeC-vhCgCT0Y-Y2-IT3jvb9jvUIW9TdPgibSlMFas9ODT0rUmKMXg69YzK-dxKnMqstW74JYT3XGUYHPzNO_tDQTEAXbMxNiUqoI-FnJlMzCUVfsVQf6E18Y7S3i10yJyuerL6DPgLucl-HniPuXO26vOVcQ.VpH8zlwPuAktOZr0.vHkdLERVMn25H6Lfo_0B9_QlkxSdpnoar_1_aSh32o5NRka2mXeDrJTpyoVaOfeGmeLS_cHbo_rIl2SJlXZQbGU2OZalEdeCUI040m2-7slZb5hp7i_Enfe5YEXMVA45uj3k2W6Bn1501hxfED9IcQURj9gbsZsgzN4sHbdQ3SCm4t797sG2zng9ZivECVoVEd_inVp7Rp3Y61qfQRIXAZJvpKWFozIpv9Y-MAtKcX30I84017CP2NjvsIZSWnq5mkHWunNb7-2-6e4ppzoikl7mKRRkf39CEX8JFc7gzMgkzgmPUyLprHPbtAdgzqJ_QGruXBZjPgmUpNK3mznj4X3jwlLjTt9kM6WF0JOHZmjaXp-PV6J1cRaZvU8kocDNEIf8HxpF5HogfnbmkkerZiDgijYgIinMaGVv320shZZ0kjJ_pqqhmoqfBsxmOPskT5BNM9ZlmLWYGatCIVmB68_wKyBxDHibxIybcxFiwuSmn0dvYGMDIGo9FHM-3zEbhrRVsrZ6BDlh7Or9bDYrz5snYESZ0c-Qqt4LeUn7X5Y1Guh6tasOeh0shChh_GFnelRpuxnkeg40bHQSSp7pdSvnvlDlCM40QU4bUwQ3XYOkWd6E6DMlZ6T9cp5dFsx-OALOOHWY_fH7a5ZTP6pwYhrQhO4Q_n1Ysx2M3PNsk1_zMayLFSugbH_P_xm9helZpGYMNGezPVOOUd8bZ2B7pmaoWwe7Eztv_edPbjeGpU78uMSi07ts1tgmVI7YYSeqAO98PMxcjWWKAh2yfgo7_3HDUVXMqr0hcqDmrDlV2LAXbe0YfYNT7o1zUKnqIqEvK2l0z_cpN8_viOsvBOXg-OxT61fUC6NrYkntpEzpPpIEn9-8Xy1F55FzJQ36ngBFFvy7QnrrIjN1IebYrZRvU_Z3m2h9mgWUwvdCyLkzMWNrOvQlDplf2WegO2nbAJP8A6OATJM_AIYJE7wspdlvYc2aTS6jOuWQhGiWYmmAXoQvSUnWkTAkAMv0u6_D13ra_3J0jJEprSvGKdUnNl8YAyHFZXchkx1spNkWItEB-OxBkjqBjS3-6yNblYubfxVPBHZ082CGBDdCcesK0r0yeoLIE1rubQVYYmfokBNEBdbw9xY098wauu92Bw4FA4g6l5JuUH0yul9yFqy4XPw64hp10LeISRuif75oGTzSrnUObu7kk2pVCaTbx5-YMNmcifQ07gh9zM2mu1zNPsi12L9hLYVyOOMiHUHlUpFRaTrCJXEahpa0b9MT_p-aXguH8LVyHoepN8tjpvphZd9zIsaF07r7hF6IiyvDu8agszUGNI-09kb6wuWBYTk.veq1wfFhMGYJNtseJK_lVQ&quot;&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/login</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">0ee07494-d0ec-4bfd-b99b-fe4088a1a2dd</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="accessToken" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">accessToken</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">accessToken</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NotFound</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="refreshtoken" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">refreshToken</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">refreshToken</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NotFound</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="idToken" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">idToken</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">idToken</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NotFound</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="oldToken" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">oldToken</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">oldToken</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
+              <stringProp name="JSONPostProcessor.defaultValues">NotFound</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Sync_Medication_Sync_UserMedication" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Sync_Medication_Sync_UserMedication" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+&quot;lastSyncedTime&quot;: 1563888421390,&#xd;
+&quot;medicationDetailsList&quot;: [{&#xd;
+  &quot;smartCapId&quot;: &quot;&quot;,&#xd;
+  &quot;timeZone&quot;: &quot;19800&quot;,&#xd;
+  &quot;updatedDate&quot;: 1565161068000,&#xd;
+  &quot;reminderTime&quot;: [{&#xd;
+   &quot;hour&quot;: &quot;13&quot;,&#xd;
+   &quot;minute&quot;: &quot;20&quot;&#xd;
+  }],&#xd;
+  &quot;endDate&quot;: 0,&#xd;
+  &quot;medicineName&quot;: &quot;Methylphenidate Hydrochloride 54 MG [Concerta]&quot;,&#xd;
+  &quot;dosage&quot;: &quot;test&quot;,&#xd;
+  &quot;reminderDays&quot;: {&#xd;
+   &quot;wednesday&quot;: 1,&#xd;
+   &quot;monday&quot;: 1,&#xd;
+   &quot;sunday&quot;: 0,&#xd;
+   &quot;tuesday&quot;: 1,&#xd;
+   &quot;thursday&quot;: 1,&#xd;
+   &quot;friday&quot;: 1,&#xd;
+   &quot;saturday&quot;: 1&#xd;
+  },&#xd;
+  &quot;startDate&quot;: 1565161068000,&#xd;
+  &quot;medicineId&quot;: &quot;1091211_3621272&quot;,&#xd;
+  &quot;frequencyDay&quot;: 2,&#xd;
+  &quot;medicationPicture&quot;: &quot;&quot;&#xd;
+ }&#xd;
+],&#xd;
+&quot;app&quot;: &quot;OCM&quot;&#xd;
+}&#xd;
+</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/sync/usermedication</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">8a8b91ed-726c-4a6e-8c93-a7c4c454e8e4</stringProp>
+                </elementProp>
+                <elementProp name="Checksum" elementType="Header">
+                  <stringProp name="Header.name">Checksum</stringProp>
+                  <stringProp name="Header.value">8468cf2abdfb032b0778fb562c890831a49262e2366288e1d25b186306b0b6b9</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Medication_Tracking_Sync_New-Medication-Track" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Medication_Tracking_Sync_New-Medication-Track" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+    &quot;app&quot;: &quot;OCM&quot;,&#xd;
+    &quot;lastSyncedTime&quot;:15641279,&#xd;
+    &quot;medicationTrackList&quot;: [{&#xd;
+        &quot;medicineId&quot;: &quot;65465474599&quot;,        &#xd;
+        &quot;consumedTime&quot;: 1559712399000,&#xd;
+        &quot;transferTime&quot;: 1559712399000,&#xd;
+        &quot;timeZone&quot;: &quot;-18000&quot;,&#xd;
+        &quot;status&quot;: &quot;consumed&quot;&#xd;
+    }]&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">api-beta.ohiomron.com</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/app/sync/new-medication-track</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Postman-Token" elementType="Header">
+                  <stringProp name="Header.name">Postman-Token</stringProp>
+                  <stringProp name="Header.value">808c8451-ffe4-48b6-a0a0-922c297bbb6c</stringProp>
+                </elementProp>
+                <elementProp name="Checksum" elementType="Header">
+                  <stringProp name="Header.name">Checksum</stringProp>
+                  <stringProp name="Header.value">68cc813a9be1e0f13d72858abea04654f6af518500447cb2bdc100f0206904c1</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">PostmanRuntime/7.26.3</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">*/*</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${accessToken}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">${OffsetDelay}</stringProp>
+              <stringProp name="RandomTimer.range">${RandomDelay}</stringProp>
+              <stringProp name="TestPlan.comments">Recorded:19708ms</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-547797305">&quot;success&quot;:true</stringProp>
+                <stringProp name="184708874">&quot;success&quot;:false</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">34</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>false</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>false</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>true</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="true">
+        <stringProp name="ProxyControlGui.port">8888</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list">
+          <stringProp name="-2063843150">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|woff|woff2)</stringProp>
+          <stringProp name="464902602">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|woff|woff2)[\?;].*</stringProp>
+        </collectionProp>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">4</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">true</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">true</boolProp>
+        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name"></stringProp>
+        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
+      </ProxyControl>
+      <hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>true</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>true</responseData>
+              <samplerData>true</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>true</responseHeaders>
+              <requestHeaders>true</requestHeaders>
+              <responseDataOnError>true</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <url>true</url>
+              <fileName>true</fileName>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">recording.xml</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+          <stringProp name="ConstantTimer.delay">${T}</stringProp>
+          <stringProp name="RandomTimer.range">100.0</stringProp>
+        </UniformRandomTimer>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
